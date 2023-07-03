@@ -1,10 +1,10 @@
 <template>
   <div>
-      用户名:<input type="text" v-model="loginForm.username" placeholder="请输入用户名"/>
+      用戶名:<input type="text" v-model="loginForm.username" placeholder="請輸入用戶名"/>
       <br><br>
-      密码： <input type="password" v-model="loginForm.password" placeholder="请输入密码"/>
+      密碼： <input type="password" v-model="loginForm.password" placeholder="請輸入密碼"/>
       <br><br>
-      <button v-on:click="login">登录</button>
+      <button v-on:click="login">登錄</button><button v-on:click="sign">註冊</button>
   </div>
 </template>
 
@@ -34,6 +34,9 @@
           })
           .catch(failResponse => {
           })
+      },
+      sign () {
+        this.$router.replace({path: '/sign'})
       }
     }
   }
